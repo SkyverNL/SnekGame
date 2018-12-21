@@ -3,14 +3,18 @@
 
 
 
-class Location
+struct Location
 {
+
+ 
+
 
 
 public:
 	
 
-
+	int X;
+	int Y;
 
 
 

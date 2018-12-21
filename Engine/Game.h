@@ -23,6 +23,8 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Graphics.h"
+#include "Board.h"
+#include <random>
 
 class Game
 {
@@ -41,6 +43,12 @@ private:
 	MainWindow& wnd;
 	Graphics gfx;
 	/********************************/
-	/*  User Variables              */
+	/*  User Variables				*/
+
+	Board brd;
+
+	
+
+
 	/********************************/
 };

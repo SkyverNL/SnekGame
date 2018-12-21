@@ -1,5 +1,5 @@
-/****************************************************************************************** 
- *	Chili DirectX Framework Version 16.07.20											  *	
+/******************************************************************************************
+ *	Chili DirectX Framework Version 16.07.20											  *
  *	Game.cpp																			  *
  *	Copyright 2016 PlanetChili.net <http://www.planetchili.net>							  *
  *																						  *
@@ -20,17 +20,21 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "Game.h"
+#include <random>
+#include "Colors.h"
 
-Game::Game( MainWindow& wnd )
+Game::Game(MainWindow& wnd)
 	:
-	wnd( wnd ),
-	gfx( wnd )
+	wnd(wnd),
+	gfx(wnd),
+	brd(gfx),
+	rng(std::random_device() ())
 {
 }
 
 void Game::Go()
 {
-	gfx.BeginFrame();	
+	gfx.BeginFrame();
 	UpdateModel();
 	ComposeFrame();
 	gfx.EndFrame();
@@ -42,4 +46,19 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+	std::uniform_int_distribution<int>(0, 255);
+	for (int y = 0; y < brd.GetHeight(); ++y)
+	{
+		for(int x = 0; x < brd.GetWidth(); ++x)
+		{
+
+		Location loc = {x,y}
+		Colors c()
+
+
+
+        }
+	
+
+	}
 }
