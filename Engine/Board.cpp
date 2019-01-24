@@ -9,7 +9,7 @@ Board::Board(Graphics & Grap)
 
 
 
-void Board::Drawcell(Location & loc, Color c)
+void Board::Drawcell(Location & loc)
 {
 }
 

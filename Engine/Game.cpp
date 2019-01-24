@@ -27,8 +27,7 @@ Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
 	gfx(wnd),
-	brd(gfx),
-	rng(std::random_device() ())
+	brd(gfx)
 {
 }
 
@@ -52,8 +51,8 @@ void Game::ComposeFrame()
 		for(int x = 0; x < brd.GetWidth(); ++x)
 		{
 
-		Location loc = {x,y}
-		Colors c()
+			Location loc = { x,y };
+		
 
 
 

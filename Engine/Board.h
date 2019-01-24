@@ -1,6 +1,7 @@
 #pragma once
 #include"Graphics.h"
 #include"Location.h"
+#include"Colors.h"
 
 class Board
 {
@@ -11,7 +12,7 @@ public:
 	Board(Graphics& Grap);
 
 
-	void Drawcell(Location& loc,Color c);
+	void Drawcell(Location& loc);
 
 	int GetWidth();
 	int GetHeight();
