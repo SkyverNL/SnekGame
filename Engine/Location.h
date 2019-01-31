@@ -13,8 +13,8 @@ struct Location
 public:
 	
 
-	int X;
-	int Y;
+	int X = 0;
+	int Y = 0;
 
 
 

@@ -27,7 +27,8 @@ Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
 	gfx(wnd),
-	brd(gfx)
+	brd(gfx),
+	loc(loc)
 {
 }
 
@@ -45,19 +46,6 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-	std::uniform_int_distribution<int>(0, 255);
-	for (int y = 0; y < brd.GetHeight(); ++y)
-	{
-		for(int x = 0; x < brd.GetWidth(); ++x)
-		{
+	brd.DrawBoard(loc);
 
-			Location loc = { x,y };
-		
-
-
-
-        }
-	
-
-	}
 }

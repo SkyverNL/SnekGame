@@ -1,4 +1,5 @@
 #include "Board.h"
+#include "Colors.h"
 
 
 Board::Board(Graphics & Grap)
@@ -7,10 +8,11 @@ Board::Board(Graphics & Grap)
 {
 }
 
-
-
-void Board::Drawcell(Location & loc)
+void Board::DrawBoard(Location & loc)
 {
+	
+		Drawcell(loc);
+	
 }
 
 int Board::GetWidth()

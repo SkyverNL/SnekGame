@@ -12,7 +12,9 @@ public:
 	Board(Graphics& Grap);
 
 
-	void Drawcell(Location& loc);
+	void Drawcell(Location& loc,Color& c);
+
+	void DrawBoard(Location& loc);
 
 	int GetWidth();
 	int GetHeight();
@@ -20,12 +22,16 @@ public:
 
 private:
 
-	int Color = 0;
+	int Color = 200;
 
 	Location loc;
 	Graphics& gfx;
 
-	static constexpr int Dimensions = 20;
+	int testcount = 5;
+
+	int count = 0;
+
+	int dim = 20;
 
 	static constexpr int Width = 10;
 
