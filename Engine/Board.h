@@ -2,6 +2,7 @@
 #include"Graphics.h"
 #include"Location.h"
 #include"Colors.h"
+#include"Location.h"
 
 class Board
 {
@@ -9,10 +10,9 @@ class Board
 
 public:
 
-	Board(Graphics& Grap);
 
 
-	void Drawcell(Location& loc,Color& c);
+	void Drawcell(Location& loc);
 
 	void DrawBoard(Location& loc);
 
@@ -22,10 +22,10 @@ public:
 
 private:
 
-	int Color = 200;
+
+	Graphics& gfx;
 
 	Location loc;
-	Graphics& gfx;
 
 	int testcount = 5;
 

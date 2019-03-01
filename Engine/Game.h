@@ -24,7 +24,6 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "Board.h"
-#include <random>
 #include "Location.h"
 
 class Game
@@ -47,7 +46,7 @@ private:
 	/*  User Variables				*/
 
 	Board brd;
-	Location& loc;
+	Location loc;
 	
 
 

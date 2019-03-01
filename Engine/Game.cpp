@@ -20,15 +20,19 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "Game.h"
-#include <random>
 #include "Colors.h"
+#include "Location.h"
+#include "Board.h"
 
 Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
 	gfx(wnd),
-	brd(gfx),
-	loc(loc)
+	brd( brd ),
+	loc( loc )
+
+	
+	
 {
 }
 
@@ -46,6 +50,9 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+
+
 	brd.DrawBoard(loc);
+
 
 }
