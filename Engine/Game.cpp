@@ -21,15 +21,13 @@
 #include "MainWindow.h"
 #include "Game.h"
 #include "Colors.h"
-#include "Location.h"
-#include "Board.h"
+
 
 Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
-	gfx(wnd),
-	brd( brd ),
-	loc( loc )
+	gfx(wnd)
+	
 
 	
 	
@@ -46,13 +44,17 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+
+
+	
 }
 
 void Game::ComposeFrame()
 {
+	for (int i = 0; i <= 10;x = dim *i, y = dim*i,i++)
+	{
 
+		gfx.DrawRectDim(x, y, dim, dim, Colors::Green);
 
-	brd.DrawBoard(loc);
-
-
+	}
 }

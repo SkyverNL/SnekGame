@@ -23,8 +23,7 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Graphics.h"
-#include "Board.h"
-#include "Location.h"
+
 
 class Game
 {
@@ -45,8 +44,12 @@ private:
 	/********************************/
 	/*  User Variables				*/
 
-	Board brd;
-	Location loc;
+
+
+	int dim = 20;
+
+	int x = 1;
+	int y = 1;
 	
 
 
