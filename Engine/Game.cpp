@@ -51,10 +51,22 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-	for (int i = 0; i <= 10;x = dim *i, y = dim*i,i++)
-	{
 
-		gfx.DrawRectDim(x, y, dim, dim, Colors::Green);
+	for (int i = 0; i <= 29; y = dim * i, ++i)
+	{
+		
+		for (int i = 0; i <= 39 ;x = dim * i, i++)
+		{
+
+			//raster drawing code
+			//gfx.DrawRectDim(x, y, dim, dim, Colors::Black);// bloks 
+
+			//gfx.DrawRectDim(x, y, 1, dim, Colors::LightGray); //border vertical
+
+			//gfx.DrawRectDim(1, y, 799, 1, Colors::LightGray);// border horizontal
+
+		}
 
 	}
+
 }
