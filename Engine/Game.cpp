@@ -20,13 +20,13 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "Game.h"
-#include "Colors.h"
 
 
 Game::Game(MainWindow& wnd)
 	:
-	wnd(wnd),
-	gfx(wnd)
+	wnd( wnd ),
+	gfx( wnd ),
+	brd( gfx )
 	
 
 	
@@ -45,16 +45,19 @@ void Game::Go()
 void Game::UpdateModel()
 {
 
+	for (int y = 0; y < brd.GetGridHeight(); y++)
+	{
+		for (int x = 0; x < brd.GetGridHeight(); x++)
+		{
 
+			Location loc = { x,y };
+			brd.DrawBoard(loc);
+		}
+	}
 	
 }
 
 void Game::ComposeFrame()
 {
-	for (int i = 0; i <= 10;x = dim *i, y = dim*i,i++)
-	{
 
-		gfx.DrawRectDim(x, y, dim, dim, Colors::Green);
-
-	}
 }

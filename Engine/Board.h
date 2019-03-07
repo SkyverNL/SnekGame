@@ -2,23 +2,18 @@
 #include"Graphics.h"
 #include"Location.h"
 #include"Colors.h"
-#include"Location.h"
 
 class Board
 {
-
-
 public:
 
 
+	Board(Graphics& Gfx);
 
 	void Drawcell(Location& loc);
 
-	void DrawBoard(Location& loc);
-
-	int GetWidth();
-	int GetHeight();
-
+	int GetGridWidth();
+	int GetGridHeight();
 
 private:
 
@@ -27,14 +22,11 @@ private:
 
 	Location loc;
 
-	int testcount = 5;
 
-	int count = 0;
+	static constexpr int dimension = 20;
 
-	int dim = 20;
+	static constexpr int GridWidth = 10;
 
-	static constexpr int Width = 10;
-
-	static constexpr int Height = 10;
+	static constexpr int GridHeight = 10;
 
 };
