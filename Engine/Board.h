@@ -1,7 +1,7 @@
 #pragma once
 #include"Graphics.h"
-#include"Location.h"
 #include"Colors.h"
+#include"Location.h"
 
 class Board
 {
@@ -10,7 +10,8 @@ public:
 
 	Board(Graphics& Gfx);
 
-	void Drawcell(Location& loc);
+	void DrawCell(Location Loc);
+
 
 	int GetGridWidth();
 	int GetGridHeight();
@@ -19,9 +20,6 @@ private:
 
 
 	Graphics& gfx;
-
-	Location loc;
-
 
 	static constexpr int dimension = 20;
 

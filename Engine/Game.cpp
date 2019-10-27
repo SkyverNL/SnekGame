@@ -28,9 +28,6 @@ Game::Game(MainWindow& wnd)
 	gfx( wnd ),
 	brd( gfx )
 	
-
-	
-	
 {
 }
 
@@ -45,19 +42,15 @@ void Game::Go()
 void Game::UpdateModel()
 {
 
-	for (int y = 0; y < brd.GetGridHeight(); y++)
-	{
-		for (int x = 0; x < brd.GetGridHeight(); x++)
-		{
 
-			Location loc = { x,y };
-			brd.DrawBoard(loc);
-		}
-	}
-	
+
+
 }
 
 void Game::ComposeFrame()
 {
+
+
+
 
 }
