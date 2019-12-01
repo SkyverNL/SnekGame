@@ -26,8 +26,10 @@ Game::Game(MainWindow& wnd)
 	:
 	wnd( wnd ),
 	gfx( wnd ),
-	brd( gfx )
+	Brd( gfx ),
+	Snk( { 2,2 } )
 	
+
 
 	
 	
@@ -44,20 +46,39 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-
-	for (int y = 0; y < brd.GetGridHeight(); y++)
-	{
-		for (int x = 0; x < brd.GetGridHeight(); x++)
-		{
-
-			Location loc = { x,y };
-			brd.DrawBoard(loc);
-		}
-	}
 	
+	if (wnd.kbd.KeyIsPressed(VK_UP))
+	{
+		Delta_loc = { 0,-1 };
+	}
+
+	if (wnd.kbd.KeyIsPressed(VK_DOWN))
+	{
+		Delta_loc = { 0,1 };
+	}
+
+	if (wnd.kbd.KeyIsPressed(VK_LEFT))
+	{
+		Delta_loc = { -1,0 };
+	}
+
+	if (wnd.kbd.KeyIsPressed(VK_RIGHT))
+	{
+		Delta_loc = { 1,0 };
+	}
+
+	Snk.Move(Delta_loc);
+
+
+
+
+
+
 }
 
 void Game::ComposeFrame()
 {
+
+	Snk.Draw(Brd);
 
 }

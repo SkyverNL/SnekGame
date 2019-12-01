@@ -6,16 +6,16 @@
 
 
 
-Board::Board(Graphics & Gfx)
+Board::Board(Graphics& Gfx)
 	:
 	gfx( Gfx )
 {
-}
+} 
 
-void Board::Drawcell(Location & loc)
+void Board::Drawcell(const Location & loc,Color c)
 {
 	
-	gfx.DrawRectDim(loc.x*dimension, loc.y*dimension, dimension, dimension, Colors::Red);
+	gfx.DrawRectDim(loc.x*dimension, loc.y*dimension, dimension, dimension,c);
 		
 	
 }
@@ -23,7 +23,7 @@ void Board::Drawcell(Location & loc)
 void Board::DrawBoard(Location & loc)
 {
 
-	Drawcell(loc);
+	Drawcell(loc,c);
 }
 
 int Board::GetGridWidth()

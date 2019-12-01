@@ -24,6 +24,8 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "Board.h"
+#include "Snake.h"
+#include "Location.h"
 
 
 class Game
@@ -42,7 +44,9 @@ private:
 private:
 	MainWindow& wnd;
 	Graphics gfx;
-	Board brd;
+	Board Brd;
+	Snake Snk;
+	Location Delta_loc {0,0};
 	/********************************/
 	/*  User Variables				*/
 	/********************************/
