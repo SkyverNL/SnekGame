@@ -1,6 +1,5 @@
 #include "Board.h"
 #include "Colors.h"
-#include "Location.h"
 
 
 
@@ -9,6 +8,7 @@
 Board::Board(Graphics& Gfx)
 	:
 	gfx( Gfx )
+
 {
 } 
 
@@ -20,8 +20,7 @@ void Board::Drawcell(const Location & loc,Color c)
 	
 }
 
-void Board::DrawBoard(Location & loc)
-{
+
 
 	Drawcell(loc,c);
 }
