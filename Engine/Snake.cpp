@@ -1,9 +1,17 @@
 #include "Snake.h"
 
 Snake::Snake(const Location& loc)
+
 {
 	
 	segments[0].InitHead(loc);
+
+	for (int i = 1; i <= ActiveSegments; ++i)
+	{
+
+		segments[i].InitBody();
+
+	}
 
 }
 
@@ -14,17 +22,22 @@ void Snake::Draw(Board& Brd) const
 
 		segments[i].Draw(Brd);
 
+		for (int InnerLoop = ActiveSegments; InnerLoop >= 0; --InnerLoop)
+		{
+
+			segments[InnerLoop].Draw(Brd);
+
+		}
+
 	}
 
 
 }
 
+
 void Snake::Move(const Location& Delta_loc)
 {
-	for (int i = 0; i > 0; ++i)
-	{
-		segments[i].Move(Delta_loc);
-	}
+
 
 
 
@@ -51,6 +64,25 @@ void Snake::Segments::Draw(Board& Brd)const
 	Brd.Drawcell(loc, c);
 
 }
+
+void Snake::Segments::Follow(Segments& snkseg)
+{
+
+	snkseg.loc.x;
+	snkseg.loc.y;
+
+
+}
+
+void Snake::Segments::MoveBy(Location& Loc)
+{
+
+	
+
+}
+
+
+
 
 void Snake::Segments::Move(const Location& Delta_Loc)
 {

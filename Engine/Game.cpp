@@ -27,7 +27,7 @@ Game::Game(MainWindow& wnd)
 	wnd( wnd ),
 	gfx( wnd ),
 	Brd( gfx ),
-	Snk( { 2,2 } )
+	Snk( { 10,10 } )
 	
 
 
@@ -67,8 +67,16 @@ void Game::UpdateModel()
 		Delta_loc = { 1,0 };
 	}
 
-	Snk.Move(Delta_loc);
-
+	
+	if (GSCounter < GameSpeed)
+	{
+		GSCounter++;
+	}
+	else
+	{
+		Snk.Move(Delta_loc);
+		GSCounter = 0;
+	}
 
 
 

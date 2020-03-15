@@ -13,10 +13,17 @@ class Snake
 
 		void Move(const Location& Delta_Loc);
 		void Draw(Board& Brd)const;
-	private:
+		void Follow(Segments& snkseg);
+		void MoveBy(Location& Loc);
 
+
+		
+
+	private:
+		
 		Location loc;
 		Color c;
+
 	};
 
 public:
@@ -26,10 +33,11 @@ public:
 
 	void Move(const Location& Delta_loc);
 	void Draw(Board& Brd)const;
+	void MoveBy(int x,int y);
 
 private:
 
-
+	
 
 	static constexpr Color HeadColor = Colors::Yellow;
 	static constexpr Color BodyColor = Colors::Green;
@@ -37,7 +45,7 @@ private:
 
 	Segments segments[MaxSegments];
 
-	int ActiveSegments = 0;
+	int ActiveSegments = 1;
 
 
 

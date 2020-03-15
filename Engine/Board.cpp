@@ -20,10 +20,12 @@ void Board::Drawcell(const Location & loc,Color c)
 	
 }
 
-
-
-	Drawcell(loc,c);
+void Board::DrawBoard(Location& loc)
+{
+	Drawcell(loc, c);
 }
+
+
 
 int Board::GetGridWidth()
 {

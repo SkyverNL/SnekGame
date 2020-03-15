@@ -47,7 +47,13 @@ private:
 	Board Brd;
 	Snake Snk;
 	Location Delta_loc {0,0};
+
 	/********************************/
 	/*  User Variables				*/
+
+	int GameSpeed = 15;
+	int GSCounter = 0;
+
+
 	/********************************/
 };
