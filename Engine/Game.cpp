@@ -74,7 +74,7 @@ void Game::UpdateModel()
 	}
 	else
 	{
-		Snk.Move(Delta_loc);
+		Snk.MoveBy(Delta_loc);
 		GSCounter = 0;
 	}
 

@@ -11,10 +11,9 @@ class Snake
 		void InitHead(const Location& In_loc);
 		void InitBody();
 
-		void Move(const Location& Delta_Loc);
 		void Draw(Board& Brd)const;
-		void Follow(Segments& snkseg);
-		void MoveBy(Location& Loc);
+		void Follow(Segments& Next);
+		void MoveBy(const Location& Delta_loc);
 
 
 		
@@ -31,9 +30,9 @@ public:
 	Snake(const Location& loc);
 	
 
-	void Move(const Location& Delta_loc);
 	void Draw(Board& Brd)const;
-	void MoveBy(int x,int y);
+	void MoveBy( const Location& Delta_loc);
+	void Grow();
 
 private:
 

@@ -1,43 +1,44 @@
 #include "Snake.h"
+#include <assert.h>
 
-Snake::Snake(const Location& loc)
+Snake::Snake(const Location& loc)// default pos start head
 
 {
 	
 	segments[0].InitHead(loc);
 
-	for (int i = 1; i <= ActiveSegments; ++i)
-	{
-
-		segments[i].InitBody();
-
-	}
-
 }
 
-void Snake::Draw(Board& Brd) const
+void Snake::Draw(Board& Brd) const// drawing evry segment
 {
-	for (int i = 0; i <= ActiveSegments; ++i)
+	for (int i = 0; i < ActiveSegments; ++i)
 	{
-
 		segments[i].Draw(Brd);
-
-		for (int InnerLoop = ActiveSegments; InnerLoop >= 0; --InnerLoop)
-		{
-
-			segments[InnerLoop].Draw(Brd);
-
-		}
-
 	}
 
 
 }
 
+void Snake::MoveBy(const Location& Delta_loc)// the segment follows the one in front of it
 
-void Snake::Move(const Location& Delta_loc)
 {
 
+
+	for (int i = ActiveSegments - 1; i > 0; --i)
+	{
+		segments[i].Follow(segments[i - 1]);
+	}
+
+	segments[0].MoveBy(Delta_loc);
+}
+
+void Snake::Grow()  // increaces max active segments
+{
+
+	if (ActiveSegments < MaxSegments)
+	{
+		++ActiveSegments;
+	}
 
 
 
@@ -45,46 +46,41 @@ void Snake::Move(const Location& Delta_loc)
 
 
 
-void Snake::Segments::InitHead(const Location& In_loc)
+void Snake::Segments::InitHead(const Location& In_loc)// init head color and pos
 {
 	loc = In_loc;
 	c = HeadColor;
 }
 
-void Snake::Segments::InitBody()
+void Snake::Segments::InitBody()     //body color
 {
 	c = BodyColor;
 }
 
 
 
-void Snake::Segments::Draw(Board& Brd)const
+void Snake::Segments::Draw(Board& Brd)const// drawing the current segment to the board
 {
 
 	Brd.Drawcell(loc, c);
 
 }
 
-void Snake::Segments::Follow(Segments& snkseg)
+void Snake::Segments::Follow(Segments& Next)//gives the pos of the next segment to the one behind it
 {
 
-	snkseg.loc.x;
-	snkseg.loc.y;
+	loc = Next.loc;
 
 
 }
 
-void Snake::Segments::MoveBy(Location& Loc)
+void Snake::Segments::MoveBy(const Location& Delta_loc)//head control for player pass on
 {
-
-	
+	assert(abs(Delta_loc.x) + abs(Delta_loc.y) == 1);
+	loc.Add(Delta_loc);
 
 }
 
 
 
 
-void Snake::Segments::Move(const Location& Delta_Loc)
-{
-	loc.Add(Delta_Loc);
-}
