@@ -12,7 +12,7 @@ class Snake
 		void InitBody();
 
 		void Draw(Board& Brd)const;
-		void Follow(Segments& Next);
+		void Follow(const Segments& Next);
 		void MoveBy(const Location& Delta_loc);
 
 
@@ -27,7 +27,7 @@ class Snake
 
 public:
 
-	Snake(const Location& loc);
+	Snake(const Location& Loc);
 	
 
 	void Draw(Board& Brd)const;

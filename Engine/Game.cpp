@@ -67,21 +67,18 @@ void Game::UpdateModel()
 		Delta_loc = { 1,0 };
 	}
 
-	
-	if (GSCounter < GameSpeed)
-	{
+
 		GSCounter++;
-	}
-	else
+	if (GSCounter >= GameSpeed)
 	{
-		Snk.MoveBy(Delta_loc);
 		GSCounter = 0;
+		if (wnd.kbd.KeyIsPressed(VK_CONTROL))
+		{
+			Snk.Grow();
+		}
+		Snk.MoveBy(Delta_loc);
+	
 	}
-
-
-
-
-
 }
 
 void Game::ComposeFrame()
