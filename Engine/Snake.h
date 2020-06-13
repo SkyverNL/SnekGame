@@ -18,7 +18,8 @@ class Snake
 
 		
 
-	private:
+
+	
 		
 		Location loc;
 		Color c;
@@ -29,20 +30,25 @@ public:
 
 	Snake(const Location& Loc);
 	
-
+	void ScreenBorderX(Location& loc);
+	void ScreenBorderY(Location& loc);
 	void Draw(Board& Brd)const;
 	void MoveBy( const Location& Delta_loc);
 	void Grow();
-
-private:
+	bool DedSnake = false;
 
 	
 
-	static constexpr Color HeadColor = Colors::Yellow;
-	static constexpr Color BodyColor = Colors::Green;
+private:
+
 	static const int MaxSegments = 100;
 
 	Segments segments[MaxSegments];
+
+	static constexpr Color HeadColor = Colors::Yellow;
+	static constexpr Color BodyColor = Colors::Green;
+	
+
 
 	int ActiveSegments = 1;
 

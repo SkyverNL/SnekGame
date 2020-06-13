@@ -2,7 +2,6 @@
 #include <assert.h>
 
 Snake::Snake(const Location& loc)// default pos start head
-
 {
 	
 	segments[0].InitHead(loc);
@@ -77,6 +76,34 @@ void Snake::Segments::MoveBy(const Location& Delta_loc)//head control for player
 	assert(abs(Delta_loc.x) + abs(Delta_loc.y) == 1);
 	loc.Add(Delta_loc);
 
+}
+
+void Snake::ScreenBorderX(Location& loc )
+{
+	if (Snake::segments[0].loc.x <= 0)
+	{
+
+		Snake::DedSnake = true;
+	}
+	else if
+	(Snake::segments[0].loc.x >= 39)
+	{
+		Snake::DedSnake = true;
+	}
+}
+
+void Snake::ScreenBorderY(Location& loc)
+{
+	if (Snake::segments[0].loc.y <= 0)
+	{
+
+		Snake::DedSnake = true;
+	}
+	else if
+	(Snake::segments[0].loc.y >= 29)
+	{
+		Snake::DedSnake = true;
+	}
 }
 
 

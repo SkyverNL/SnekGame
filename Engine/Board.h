@@ -17,6 +17,12 @@ public:
 	int GetGridWidth();
 	int GetGridHeight();
 
+
+
+	void GameBorder(Location& loc);
+
+
+
 private:
 
 	Color c;

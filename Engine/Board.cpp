@@ -36,3 +36,23 @@ int Board::GetGridHeight()
 {
 	return GridHeight;
 }
+
+void Board::GameBorder(Location& loc)
+{
+
+	for (int i = 0; i <= 39; i++)
+	{
+		Drawcell({ i,0 }, Colors::Gray);
+		Drawcell({ i,29 }, Colors::Gray);
+
+		for (int i = 0; i <= 29; i++)
+		{
+			Drawcell({ 0,i }, Colors::Gray);
+			Drawcell({ 39,i }, Colors::Gray);
+		}
+	}
+
+
+
+
+}

@@ -79,11 +79,22 @@ void Game::UpdateModel()
 		Snk.MoveBy(Delta_loc);
 	
 	}
+
+	Snk.ScreenBorderX(loc);
+	Snk.ScreenBorderY(loc);
+	Brd.GameBorder(loc);
+
+
 }
 
 void Game::ComposeFrame()
 {
-
-	Snk.Draw(Brd);
-
+	if (Snk.DedSnake)
+	{
+	
+	}
+	else
+	{
+		Snk.Draw(Brd);
+	}
 }
